@@ -1,0 +1,6 @@
+server:
+  port: 1111
+
+springdoc:
+  api-docs:
+    path: /swagger

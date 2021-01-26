@@ -14,7 +14,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 public class Alcohol {
 	
-	int id;
+	Integer id;
 	String name;
 
 }
