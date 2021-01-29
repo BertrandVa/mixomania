@@ -11,7 +11,6 @@ import com.bertrand.mixo.models.Alcohol;
 public interface AlcoholRepository extends JpaRepository<Alcohol, Integer> {
 
 	Optional<Alcohol> findByName(String name);
-	
 	Optional<Alcohol> findById(Integer id);
 	
 }

@@ -36,9 +36,14 @@ public class AlcoholController {
         return service.getAllAlcohols();
     }  
 	
-	@GetMapping(value="/alcohols/{id}")
+	@GetMapping(value="/alcohol/{id}")
     public Optional<Alcohol> getAlcoholById(@PathVariable("id") @Min(1) int id){
         return service.findById(id);
+    }  
+	
+	@GetMapping(value="/alcohols/{name}")
+    public Optional<Alcohol> getAlcoholByName(@PathVariable("name") String name){
+        return service.findByName(name);
     }  
 
 	@PostMapping(value="/alcohols")
@@ -59,6 +64,6 @@ public class AlcoholController {
 		Alcohol existingAlcohol = this.service.findById(id)
 											  .orElseThrow(()-> new AlcoholNotFoundException("Alcohol with id " + id + " not found"));
 		this.service.deleteById(existingAlcohol.getId());
-		return ("Student with id " + id + " deleted");
+		return ("Alcohol with id " + id + " deleted");
 	}
 }
