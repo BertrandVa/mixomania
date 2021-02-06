@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bertrand.mixo.Exceptions.BottleNotFoundException;
-import com.bertrand.mixo.models.Alcohol;
 import com.bertrand.mixo.models.Bottle;
 import com.bertrand.mixo.service.BottleService;
 
@@ -48,8 +47,8 @@ public class BottleController {
     } 
 	
 	@GetMapping(value="/bottlesbyalcohol/{alcohol}")
-    public List<Bottle> getBottlesByAlcohol(@PathVariable("alcohol") Alcohol alcohol){
-        return service.findByAlcohol(alcohol);
+    public List<Bottle> getBottlesByAlcohol(@PathVariable("alcohol") Integer alcoholId){
+        return service.findByAlcohol(alcoholId);
     } 
 
 	@PostMapping(value="/bottles")

@@ -32,5 +32,4 @@ public class Alcohol {
 	
 	@Column(nullable = false, name = "Name")
 	String name;
-
 }

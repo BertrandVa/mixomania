@@ -40,7 +40,8 @@ public class BottleServiceImpl implements BottleService {
 	}
 
 	@Override
-	public List<Bottle> findByAlcohol(Alcohol alcohol) {
+	public List<Bottle> findByAlcohol(Integer alcoholId) {
+		Alcohol alcohol = this.alc.findById(alcoholId).get();
 		return this.repo.findByAlcohol(alcohol);
 	}
 
